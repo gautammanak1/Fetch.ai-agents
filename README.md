@@ -46,10 +46,30 @@ The Vehicle Micro Agents retrieve details about vehicles using their registratio
 
 ## Getting Started
 
+<h3 align="center" style="margin-bottom: 40px; font-weight: lighter">
+  <p>Fetch.ai's vision is to create an AI-empowered platform that can connect services and APIs without any domain knowledge. Our technology is built on four key components: AI Agents, the Agentverse, the AI Engine, and the Fetch Network. AI Agents are independent decision-makers that connect to the network and represent data, APIs, services and people, while the Agentverse serves as a development platform for these agents. The AI Engine links human input to AI actions, and the Fetch Network underpins the entire system, ensuring smooth operation and integration.</p>
+</h3>
+
+The uAgent Library, the library behind the agents:
+
+- [`uAgents`](https://github.com/fetchai/uAgents) - python library for uagents src.
+
+Build and deploy agents with Agentverse.ai; a hosting and agent management platform.
+- [`Agentverse↗️`](https://agentverse.ai) - the platform for building production ready AI agents.
+
+Chat with AI Agents using DeltaV; the gateway to the AI-Engine:
+- [`DeltaV↗️`](https://deltav.agentverse.ai) - Enjoy a simple web interface to chat with AI agents as part of DeltaV
+
+Essential reading:
+- [`Create an agent↗️`](https://fetch.ai/docs/guides/agents/create-a-uagent) - A simple guide to get you moving quickly 
+- [`What is AI Engine↗️`](https://fetch.ai/docs/concepts/ai-engine/ai-engine-intro) - Our AI multi-model system, utilising LLMs. 
+- [`What is Fetch.ai↗️`](https://fetch.ai/docs/concepts/introducing-fetchai) - Our tech stack and ecosystem. 
+
 ### Prerequisites
 - Python 3.8 or higher
 - `uagents` library
 - `requests` library
+- `rapid api` 
 
 ### Installation
 1. Clone the repository:
