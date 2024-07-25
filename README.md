@@ -46,10 +46,6 @@ The Vehicle Micro Agents retrieve details about vehicles using their registratio
 
 ## Getting Started
 
-<h3 align="center" style="margin-bottom: 40px; font-weight: lighter">
-  <p>Fetch.ai's vision is to create an AI-empowered platform that can connect services and APIs without any domain knowledge. Our technology is built on four key components: AI Agents, the Agentverse, the AI Engine, and the Fetch Network. AI Agents are independent decision-makers that connect to the network and represent data, APIs, services and people, while the Agentverse serves as a development platform for these agents. The AI Engine links human input to AI actions, and the Fetch Network underpins the entire system, ensuring smooth operation and integration.</p>
-</h3>
-
 The uAgent Library, the library behind the agents:
 
 - [`uAgents`](https://github.com/fetchai/uAgents) - python library for uagents src.
