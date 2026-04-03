@@ -1,87 +1,107 @@
-# Job Finder, Hackathons & Events, Profile Recommendations, and Vehicle Micro Agents
+# Fetch.ai Agents Collection
 
-This repository contains a collection of AI agents developed using Fetch.ai technology, including uAgent, Agentverse, and DeltaV. Each agent is designed to perform specific tasks such as finding job listings, providing details about hackathons and events, recommending professional profiles, and retrieving vehicle details including challan information.
+[![Fetch.ai](https://img.shields.io/badge/Fetch.ai-uAgents-purple)](https://fetch.ai)
+[![Agentverse](https://img.shields.io/badge/Agentverse-DeltaV-blue)](https://agentverse.ai)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![RapidAPI](https://img.shields.io/badge/RapidAPI-Integrated-0055DA)](https://rapidapi.com)
 
-## Table of Contents
+A collection of AI agents built with Fetch.ai's uAgents framework, Agentverse, and DeltaV. Each agent performs a specialized task — from job searching and event discovery to profile recommendations and vehicle information retrieval.
 
-- [Job Finder Agent](#job-finder-agent)
-- [Hackathons and Events Agent](#hackathons-and-events-agent)
-- [Profile Recommendations Agent](#profile-recommendations-agent)
-- [Vehicle Micro Agents with Challan Details](#vehicle-micro-agents-with-challan-details)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+## Agents
 
-## Job Finder Agent
+### 1. Job Finder Agent
 
-The Job Finder Agent assists users in finding job listings based on a provided job description. It utilizes the LinkedIn Data API to fetch relevant job details and provide them to the user.
+Searches for job listings based on a description using the LinkedIn Data API.
 
-### Features
-- Search for jobs using keywords.
-- Retrieve job details including title, company, location, and posting date.
+- **Input:** Job description (e.g., "remote data scientist")
+- **Output:** Matching jobs with title, company, location, and posting date
+- **API:** LinkedIn Data API via RapidAPI
 
-## Hackathons and Events Agent
+### 2. Hackathons & Events Agent
 
-The Hackathons and Events Agent helps users discover upcoming events, hackathons, and meetups based on provided event descriptions and locations.
+Discovers upcoming tech events, hackathons, and meetups by keyword and location.
 
-### Features
-- Search for events using keywords and location.
-- Retrieve event details including name, date, community, and registration link.
+- **Input:** Event description + optional location
+- **Output:** Event name, date, community, and registration link
+- **Data Source:** Static event dataset (extensible to API)
 
-## Profile Recommendations Agent
+### 3. Profile Recommendations Agent
 
-The Profile Recommendations Agent provides recommendations for professional profiles based on a provided profile description. It uses the LinkedIn Data API to fetch and display profile details.
+Finds professional profiles matching a given description using LinkedIn search.
 
-### Features
-- Search for professional profiles using keywords.
-- Retrieve profile details including name, title, location, and summary.
+- **Input:** Profile description (e.g., "machine learning engineer India")
+- **Output:** Matching profiles with name, title, location, and summary
+- **API:** LinkedIn Data API via RapidAPI
 
-## Vehicle Micro Agents with Challan Details
+### 4. Vehicle Details Agent
 
-The Vehicle Micro Agents retrieve details about vehicles using their registration numbers. This includes comprehensive information such as owner details, vehicle specifications, and challan details.
+Retrieves vehicle registration information and challan (traffic violation) details for Indian vehicles.
 
-### Features
-- Fetch vehicle details using registration numbers.
-- Retrieve owner information, vehicle specifications, insurance details, and challan information.
+- **Input:** Vehicle registration number
+- **Output:** Vehicle owner info, registration details, pending challans
+- **API:** RTO Vehicle Information API via RapidAPI
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Agent Framework | Fetch.ai uAgents |
+| AI Engine | Fetch.ai AI Engine / DeltaV |
+| Job Data | LinkedIn Data API (RapidAPI) |
+| Vehicle Data | RTO Vehicle Info API (RapidAPI) |
+| Data Models | Pydantic |
+
+## Project Structure
+
+```
+├── Hackathon and Technical Events agents.py   # Event discovery agent
+├── JobAgents.py                                # Job search agent
+├── Profile Recommendations Agents.py           # Profile recommendation agent
+├── Vehicle micro.py                            # Vehicle details agent
+└── README.md
+```
 
 ## Getting Started
 
-The uAgent Library, the library behind the agents:
-
-- [`uAgents`](https://github.com/fetchai/uAgents) - python library for uagents src.
-
-Build and deploy agents with Agentverse.ai; a hosting and agent management platform.
-- [`Agentverse↗️`](https://agentverse.ai) - the platform for building production ready AI agents.
-
-Chat with AI Agents using DeltaV; the gateway to the AI-Engine:
-- [`DeltaV↗️`](https://deltav.agentverse.ai) - Enjoy a simple web interface to chat with AI agents as part of DeltaV
-
-Essential reading:
-- [`Create an agent↗️`](https://fetch.ai/docs/guides/agents/create-a-uagent) - A simple guide to get you moving quickly 
-- [`What is AI Engine↗️`](https://fetch.ai/docs/concepts/ai-engine/ai-engine-intro) - Our AI multi-model system, utilising LLMs. 
-- [`What is Fetch.ai↗️`](https://fetch.ai/docs/concepts/introducing-fetchai) - Our tech stack and ecosystem. 
-
 ### Prerequisites
-- Python 3.8 or higher
-- `uagents` library
-- `requests` library
-- `rapid api` 
+
+- Python 3.8+
+- RapidAPI key (for LinkedIn Data API and RTO Vehicle API)
+- Fetch.ai Agentverse account (for DeltaV deployment)
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/gautammanak1/Fetch.ai-agents.git
-   cd Fetch.ai-agents
 
-2. Install the required Python packages:
-```
-pip install -r requirements.txt
+```bash
+git clone https://github.com/gautammanak1/Fetch.ai-agents.git
+cd Fetch.ai-agents
+pip install uagents ai-engine pydantic requests
 ```
 
-3. Running the Agents
-To run any of the agents, execute the following command:
+### Configuration
+
+Replace the `rapidapi_key` variable in each agent file with your RapidAPI key:
+
+```python
+rapidapi_key = "your_rapidapi_key_here"
 ```
-python <agent_filename>.py
+
+### Running an Agent
+
+```bash
+python JobAgents.py
 ```
-### Contributing
-We welcome contributions to improve and expand the functionality of these agents. Please fork the repository, create a new branch, and submit a pull request with your changes.
+
+### Deploy to Agentverse
+
+Each agent can be deployed to [Agentverse](https://agentverse.ai) and accessed through DeltaV for natural language interaction.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-agent`)
+3. Commit your changes
+4. Push and open a Pull Request
+
+## License
+
+MIT
